@@ -19,8 +19,43 @@
   }
 }
 
+/* My hand written CSS */
+@font-face {
+  font-family: myFont;
+  src: url(/Milker.ttf);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: rgb(3,3,52);
+  background: linear-gradient(120deg, rgba(3,3,52,1) 0%, rgba(2,1,11,1) 2%, rgba(5,3,34,1) 62%, rgba(6,3,28,1) 92%);
   font-family: Arial, Helvetica, sans-serif;
+  color:white
+
+}
+.bodyColor{
+  background: rgb(3,3,52);
+  background: linear-gradient(120deg, rgba(3,3,52,1) 0%, rgba(2,1,11,1) 2%, rgba(5,3,34,1) 62%, rgba(6,3,28,1) 92%);
+}
+
+.headingSpan1{
+  background: #F0F1F1;
+  background: linear-gradient(to right, #F0F1F1 0%, #4C3CBF 50%, #878F96 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family:myFont ;
+
+}
+
+.headingSpan2{
+  background: #8889F1;
+  background: linear-gradient(to right, #8889F1 0%, #2D3896 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   font-family:myFont ;
+  
+}
+
+.navbarLinks{
+  background: rgb(55,36,135);
+  background: linear-gradient(120deg, rgba(55,36,135,1) 21%, rgba(69,31,151,1) 73%);
 }
