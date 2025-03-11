@@ -1,4 +1,4 @@
-"use client"; // Ensure it's a client component
+"use client"; 
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -50,7 +50,7 @@ const Navbar = () => {
       </div>
 
       {/* Current Time */}
-      <div className="text-sm">
+      <div className="text-md">
         <p>{currentTime}</p>
         <p className="text-gray-400">{timeZone}</p>
       </div>
