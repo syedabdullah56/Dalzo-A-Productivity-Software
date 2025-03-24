@@ -38,12 +38,15 @@ const Navbar = () => {
       </div>
 
       {/* Navigation Links */}
-      <div className="navbarLinks flex space-x-6 p-[2vh] rounded-[2vh] shadow-lg">
+      <div className="navbarLinks flex space-x-6 p-[2vh] rounded-[2vh] shadow-lg gap-x-[1vw] px-[2vw] w-[25vw] justify-center items-center">
         <Link href="/" className="hover:text-gray-400 transition">
           Home
         </Link>
+        <Link href="/tasks" className="hover:text-gray-400 transition">
+          Tasks
+        </Link>
         <Link href="/progress" className="hover:text-gray-400 transition">
-          Your Progress
+           Progress
         </Link>
         <Link href="/contact" className="hover:text-gray-400 transition">
           Contact
@@ -64,12 +67,12 @@ const Navbar = () => {
         {/* Show Sign In & Sign Up when signed out */}
         <SignedOut>
           <SignInButton>
-            <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition">
+            <button className="px-4 py-2 authBg text-white rounded-md  transition-all duration-300">
               Sign In
             </button>
           </SignInButton>
           <SignUpButton>
-            <button className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition">
+            <button className="px-4 py-2 authBg text-white rounded-md  transition-all duration-300">
               Sign Up
             </button>
           </SignUpButton>

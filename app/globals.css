@@ -59,3 +59,16 @@ body {
   background: rgb(55,36,135);
   background: linear-gradient(120deg, rgba(55,36,135,1) 21%, rgba(69,31,151,1) 73%);
 }
+
+.authBg{
+  background: rgb(62,65,232);
+  background: linear-gradient(120deg, rgba(62,65,232,1) 31%, rgba(73,75,207,1) 82%);
+}
+
+
+.authBg:hover {
+  background: rgb(9,10,91);
+  background: linear-gradient(120deg, rgba(9,10,91,1) 31%, rgba(26,28,129,1) 82%);
+}
+
+
