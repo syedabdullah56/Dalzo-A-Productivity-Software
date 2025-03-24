@@ -1,6 +1,7 @@
 "use client"; 
 
 import { useState, useEffect } from "react";
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -49,11 +50,39 @@ const Navbar = () => {
         </Link>
       </div>
 
-      {/* Current Time */}
+
+     {/* Wrapper of Time and Authentication */}
+     <div className="flex flex-row gap-x-[2vw]">
+          {/* Current Time */}
       <div className="text-md">
         <p>{currentTime}</p>
         <p className="text-gray-400">{timeZone}</p>
       </div>
+
+      {/* Authentication Section Made With Clerk */}
+      <div className="flex items-center space-x-4">
+        {/* Show Sign In & Sign Up when signed out */}
+        <SignedOut>
+          <SignInButton>
+            <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition">
+              Sign In
+            </button>
+          </SignInButton>
+          <SignUpButton>
+            <button className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition">
+              Sign Up
+            </button>
+          </SignUpButton>
+        </SignedOut>
+
+        {/* Show Profile Icon when signed in */}
+        <SignedIn>
+          <UserButton afterSignOutUrl="/" />
+        </SignedIn>
+      </div>
+
+     </div>
+   
     </nav>
   );
 };
