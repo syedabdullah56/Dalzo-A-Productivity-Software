@@ -71,4 +71,9 @@ body {
   background: linear-gradient(120deg, rgba(9,10,91,1) 31%, rgba(26,28,129,1) 82%);
 }
 
+.footerBg{
+  background: rgb(9,10,91);
+  background: linear-gradient(120deg, rgba(9,10,91,1) 13%, rgba(19,20,111,1) 31%, rgba(31,32,132,1) 55%, rgba(37,38,147,1) 72%, rgba(45,47,161,1) 82%, rgba(74,76,194,1) 91%);
+}
+
 
