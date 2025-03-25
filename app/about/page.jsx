@@ -1,5 +1,5 @@
 import { FaFacebook, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
-import { SiNextdotjs, SiReact, SiTailwindcss, SiMongodb, SiRedux } from "react-icons/si";
+import { SiNextdotjs, SiReact, SiTailwindcss, SiMongodb, SiRedux,SiJavascript, SiTypescript, SiPython, SiC } from "react-icons/si";
 import Image from "next/image";
 
 export default function About() {
@@ -12,17 +12,22 @@ export default function About() {
         <p className="text-gray-400 mt-2">Full-Stack Developer | MERN Stack | Next.js Enthusiast</p>
       </div>
 
-      {/* Tech Stack */}
-      <div className="mt-8 text-center">
-        <h2 className="text-2xl font-semibold">Tech Stack</h2>
-        <div className="flex space-x-6 justify-center mt-4">
-          <SiNextdotjs size={40} className="text-gray-300 hover:text-white transition" />
-          <SiReact size={40} className="text-blue-400 hover:text-white transition" />
-          <SiTailwindcss size={40} className="text-teal-400 hover:text-white transition" />
-          <SiMongodb size={40} className="text-green-500 hover:text-white transition" />
-          <SiRedux size={40} className="text-purple-500 hover:text-white transition" />
-        </div>
+     {/* Tech Stack */}
+     <div className="mt-8 text-center">
+      <h2 className="text-2xl font-semibold">Tech Stack</h2>    
+        <div className="flex flex-wrap justify-center gap-6 mt-4">
+             <SiNextdotjs size={40} className="text-gray-300 hover:text-white transition" />
+             <SiReact size={40} className="text-blue-400 hover:text-white transition" />
+             <SiTailwindcss size={40} className="text-teal-400 hover:text-white transition" />
+             <SiMongodb size={40} className="text-green-500 hover:text-white transition" />
+             <SiRedux size={40} className="text-purple-500 hover:text-white transition" />
+             <SiJavascript size={40} className="text-yellow-400 hover:text-white transition" />
+             <SiTypescript size={40} className="text-blue-500 hover:text-white transition" />
+             <SiPython size={40} className="text-blue-300 hover:text-white transition" />
+             <SiC size={40} className="text-gray-400 hover:text-white transition" />
+         </div>
       </div>
+
 
       {/* Goals Section */}
       <div className="mt-8 max-w-3xl text-center">
@@ -30,7 +35,7 @@ export default function About() {
         <p className="text-gray-400 mt-2">
           I'm on a mission to become a top-tier software engineer, building impactful applications
           while continuously learning and growing in the tech industry. My dream is to contribute to
-          cutting-edge projects and innovate in the field of web development.
+          cutting-edge projects and innovate in the field of Software development.
         </p>
       </div>
 
@@ -50,7 +55,7 @@ export default function About() {
           <a href="mailto:syedabdullah8750@gmail.com" className="hover:text-red-500 transition">
             <FaEnvelope size={30} />
           </a>
-        </div>
+        </div>      
       </div>
     </div>
   );
