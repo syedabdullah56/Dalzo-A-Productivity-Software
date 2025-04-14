@@ -1,6 +1,6 @@
 
 import dbConnect from "../../lib/dbConnect";
-
+// To Check mongodb is connected or not
 export async function GET(req) {
   await dbConnect();
 
