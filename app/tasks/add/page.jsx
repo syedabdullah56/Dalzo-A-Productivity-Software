@@ -1,8 +1,13 @@
 "use client"
-
+import { useRouter } from "next/navigation";
 import React,{useState,useEffect} from 'react'
 
 const page = () => {
+
+    
+    const router = useRouter();
+
+    const [userId, setUserId] = useState("");
     const [userName, setUserName] = useState("");
     const [userEmail, setUserEmail] = useState("");
     const [title, setTitle] = useState("");
@@ -15,6 +20,7 @@ const page = () => {
     const fetchTodos=async ()=>{
       const response = await fetch('/api/todos');
       const data = await response.json();
+      setUserId(data.userId);
       setUserName(data.userName);
       setUserEmail(data.userEmail);     
     }
@@ -30,6 +36,7 @@ const page = () => {
       e.preventDefault();
       
       const newTodo={
+        userId,
         userEmail,
         userName,
         title,
@@ -39,7 +46,7 @@ const page = () => {
         status
       }
       try {
-        const response = await fetch('/api/todos', {  // assuming POST route
+        const response = await fetch('/api/todos', { 
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(newTodo),
@@ -47,12 +54,14 @@ const page = () => {
   
         if (response.ok) {
           console.log("Todo added successfully!");
+          alert("Todo Created Successfully! 🎉");
+          router.push("/tasks"); // navigate to /tasks after alert
           // Resetting The Form After Submission To Submit new Todos
-          setTitle("");
-          setDescription("");
-          setDate("");
-          setPriority("medium");
-          setStatus("pending");
+          // setTitle("");
+          // setDescription("");
+          // setDate("");
+          // setPriority("medium");
+          // setStatus("pending");
         } else {
           console.error("Failed to add todo");
         }

@@ -6,13 +6,13 @@ import Link from "next/link";
 const TasksPage = () => {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
-  const [todo, setTodo] = useState([]);
+  const [todos, setTodos] = useState([]);
   const fetchTodos=async ()=>{
     const response = await fetch('/api/todos');
     const data = await response.json();
     setUserName(data.userName);
     setUserEmail(data.userEmail);
-    setTodo(data.todos);
+    setTodos(data.todos);
   }
 
   useEffect(() => {
@@ -29,11 +29,6 @@ const TasksPage = () => {
         <p>Email: {userEmail}</p>
 
 
-        {todo.map((todoItem) => (
-  <div key={todoItem._id}>
-    <p>Title: {todoItem.title}</p>
-  </div>
-))}
 
       
             <Link href="/tasks/add" className="w-[95%] h-[10%] mt-4 linkTaskAdd rounded-md shadow-md  flex justify-center items-center text-2xl font-bold mb-4 text-white transition-all">+ Add Todo</Link>
@@ -41,7 +36,17 @@ const TasksPage = () => {
 
 
           {/* TodoCard */}
-            <TodoCard/>
+             {/* Mapping each todo to a TodoCard */}
+          {
+            todos && (
+              <div className="w-full flex flex-col gap-y-4">
+              {todos.map((todoItem) => (
+                <TodoCard key={todoItem._id} todo={todoItem} />
+              ))}
+              </div>
+            )
+          }
+         
           
 
       

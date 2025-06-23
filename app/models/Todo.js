@@ -1,6 +1,7 @@
 import mongoose from "mongoose"
 
 const TodoSchema=new mongoose.Schema({
+    userId:{type:String,required:true},
     userEmail:{type:String,required:true},
     userName:{type:String,required:true},
     title:{type:String,required:true},

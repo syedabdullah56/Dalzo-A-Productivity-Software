@@ -3,7 +3,7 @@ import Todo from "../../../app/models/Todo";
 import { NextResponse } from 'next/server'
 import { currentUser, auth } from '@clerk/nextjs/server'
 
-// Get All Todos
+// GET: Fetch todos only for the authenticated user
 export async function GET(req) {
 
     try {
@@ -12,8 +12,10 @@ export async function GET(req) {
         if (!userId) {
             return new NextResponse('Unauthorized', { status: 401 })
           }
+        console.log("User ID:", userId);
+
         const user = await currentUser();
-        const todos = await Todo.find({});
+        const todos = await Todo.find({userId});
         return NextResponse.json({
             todos,
             userName: user?.username || user?.fullName || "Anonymous",
@@ -27,21 +29,38 @@ export async function GET(req) {
     }
 }
 
+// POST: Create a new todo for the authenticated user
 export async function POST(req) {
-    try {
-        await dbConnect();
-        const { userId } = await auth()
-        if (!userId) {
-            return new NextResponse('Unauthorized', { status: 401 })
-          }
-        const { userEmail, userName, title, description, date, priority, status } = await req.json();
-        const todo = new Todo({ userEmail, userName, title, description, date, priority, status });
-        await todo.save();
-        return new Response("Todo created successfully", { status: 201 });
-    } catch (error) {
-        
-        console.error("Error creating todo:", error);
-        return new Response("Internal Server Error", { status: 500 });
+  try {
+    await dbConnect();
+
+    const { userId } = await auth();
+    if (!userId) {
+      return new NextResponse("Unauthorized", { status: 401 });
     }
+    console.log("User ID:", userId);
+    
+
+    const user = await currentUser();
+    const { title, description, date, priority, status } = await req.json();
+
+    const todo = new Todo({
+      userId,
+      userEmail: user?.emailAddresses?.[0]?.emailAddress || "No Email",
+      userName: user?.username || user?.fullName || "Anonymous",
+      title,
+      description,
+      date,
+      priority,
+      status,
+    });
+
+    await todo.save();
+
+    return new NextResponse("Todo created successfully", { status: 201 });
+  } catch (error) {
+    console.error("Error creating todo:", error);
+    return new NextResponse("Internal Server Error", { status: 500 });
+  }
 }
 
