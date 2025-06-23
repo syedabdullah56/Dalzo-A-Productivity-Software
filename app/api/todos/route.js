@@ -8,11 +8,10 @@ export async function GET(req) {
 
     try {
         await dbConnect();
-        const { userId } = await auth()
+        const { userId } = await auth() 
         if (!userId) {
             return new NextResponse('Unauthorized', { status: 401 })
           }
-        console.log("User ID:", userId);
 
         const user = await currentUser();
         const todos = await Todo.find({userId});
@@ -38,9 +37,6 @@ export async function POST(req) {
     if (!userId) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
-    console.log("User ID:", userId);
-    
-
     const user = await currentUser();
     const { title, description, date, priority, status } = await req.json();
 

@@ -11,7 +11,7 @@ const TasksPage = () => {
     const response = await fetch('/api/todos');
     const data = await response.json();
     setUserName(data.userName);
-    setUserEmail(data.userEmail);
+    setUserEmail(data.userEmail); 
     setTodos(data.todos);
   }
 
@@ -41,7 +41,7 @@ const TasksPage = () => {
             todos && (
               <div className="w-full flex flex-col gap-y-4">
               {todos.map((todoItem) => (
-                <TodoCard key={todoItem._id} todo={todoItem} />
+                <TodoCard key={todoItem._id} todo={todoItem} refetchTodos={fetchTodos}/>
               ))}
               </div>
             )
