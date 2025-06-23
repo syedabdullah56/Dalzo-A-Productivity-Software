@@ -40,7 +40,7 @@ const TodoCard = ({todo,refetchTodos}) => {
 
       if (res.ok) {
         alert("Marked as completed ✅");
-        refetchTodos(); 
+        refetchTodos();
       } else {
         alert("Failed to mark complete ❌");   
       }
@@ -61,7 +61,7 @@ const TodoCard = ({todo,refetchTodos}) => {
       <div className='flex gap-x-1'>
       <button className="mt-2 bg-gray-700 text-white rounded p-0.5">Edit</button>
       <button className="mt-2 bg-red-500 text-white rounded p-0.5" onClick={handleDelete}>Delete</button>
-      <button className="mt-2 bg-green-500 text-white rounded p-0.5" onClick={handleComplete}>Completed</button>
+      <button className="mt-2 bg-green-500 text-white rounded p-0.5" onClick={handleComplete}>Completed?</button>
       </div>
       
     </div>  

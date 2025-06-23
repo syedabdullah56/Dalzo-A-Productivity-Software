@@ -14,7 +14,7 @@ export async function GET(req) {
           }
 
         const user = await currentUser();
-        const todos = await Todo.find({userId});
+        const todos = await Todo.find({ userId, status: "pending" });
         return NextResponse.json({
             todos,
             userName: user?.username || user?.fullName || "Anonymous",
