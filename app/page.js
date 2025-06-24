@@ -27,7 +27,7 @@ export default function Home() {
         <h2 className="text-2xl font-bold mb-2">What is Dalzo?</h2>
         <p className="text-md leading-relaxed">
           Dalzo helps you manage your daily tasks and priorities with ease.
-          Whether you're a student, developer, or entrepreneur — stay focused,
+          Whether you&rsquo;re a student, developer, or entrepreneur — stay focused,
           stay productive, and crush your goals every day with a clean,
           minimal, and powerful Todo system.
         </p>
