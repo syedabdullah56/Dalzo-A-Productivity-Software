@@ -76,21 +76,15 @@ body {
   background: linear-gradient(120deg, rgba(9,10,91,1) 13%, rgba(19,20,111,1) 31%, rgba(31,32,132,1) 55%, rgba(37,38,147,1) 72%, rgba(45,47,161,1) 82%, rgba(74,76,194,1) 91%);
 }
 
-.todoCard{
-  background: rgb(62,65,232);
-  background: linear-gradient(120deg, rgba(62,65,232,1) 31%, rgba(73,75,207,1) 82%);
-}
 
-.todoCard:hover {
-  background: rgb(9,10,91);
-  background: linear-gradient(120deg, rgba(9,10,91,1) 31%, rgba(26,28,129,1) 82%);
-}
+
+
 
 .linkTaskAdd{
   background: rgb(55,36,135);
   background: linear-gradient(120deg, rgba(55,36,135,1) 21%, rgba(69,31,151,1) 73%);
 }
-
+ 
 .linkTaskAdd:hover{
   background: rgb(9,10,91);
   background: linear-gradient(120deg, rgba(9,10,91,1) 31%, rgba(26,28,129,1) 82%);

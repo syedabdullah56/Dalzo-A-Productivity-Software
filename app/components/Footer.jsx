@@ -35,7 +35,8 @@ const Footer = () => {
       
       {/* Copyright */}
       <div className="text-center text-gray-400 text-sm mt-4">
-        &copy; {new Date().getFullYear()} Dalzo. All rights reserved.
+        &copy; {new Date().getFullYear()} Dalzo. Built with 💙 for productivity.
+
       </div>
     </footer>
   );
