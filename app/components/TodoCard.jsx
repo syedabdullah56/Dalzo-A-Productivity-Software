@@ -49,6 +49,12 @@ const TodoCard = ({todo,refetchTodos}) => {
     }
   };
 
+  // Handle Edit
+    const handleEdit = () => {
+    // Navigate to /tasks/edit with todo._id as query parameter
+    router.push(`/tasks/edit?id=${todo._id}`);
+  };
+
   return (
     <div className="text-white w-[95%] h-[11vh] todoCard rounded-md shadow-md hover:bg-gray-200 flex flex-row justify-between items-center p-1">
       
@@ -59,7 +65,7 @@ const TodoCard = ({todo,refetchTodos}) => {
       </div>    
    
       <div className='flex gap-x-1'>
-      <button className="mt-2 bg-gray-700 text-white rounded p-0.5">Edit</button>
+      <button className="mt-2 bg-gray-700 text-white rounded p-0.5" onClick={handleEdit}>Edit</button>
       <button className="mt-2 bg-red-500 text-white rounded p-0.5" onClick={handleDelete}>Delete</button>
       <button className="mt-2 bg-green-500 text-white rounded p-0.5" onClick={handleComplete}>Completed?</button>
       </div>
