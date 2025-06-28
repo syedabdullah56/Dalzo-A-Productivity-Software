@@ -35,9 +35,16 @@ const TasksPage = () => {
 
         {/* Scrollable Todo List */}
         <div className="w-full h-[65vh] overflow-y-auto flex flex-col gap-y-4 pr-1">
-          {todos && todos.map((todoItem) => (
-            <TodoCard key={todoItem._id} todo={todoItem} refetchTodos={fetchTodos} />
-          ))}
+            {todos &&
+                 [...todos]
+                            .sort((a, b) => {
+                     const priorityOrder = { high: 0, medium: 1, low: 2 };
+                     return priorityOrder[a.priority] - priorityOrder[b.priority];
+    })
+    .map((todoItem) => (
+      <TodoCard key={todoItem._id} todo={todoItem} refetchTodos={fetchTodos} />
+    ))}
+
         </div>
       </div>
     </div>

@@ -5,14 +5,15 @@ export default function Home() {
   return (
     <div className="bodyColor min-h-screen w-full flex flex-col items-center justify-start pt-16 px-4">
       {/* Hero Heading */}
-      <div className="text-center mb-10">
-        <h1 className="headingSpan1 text-[3.2rem] sm:text-[3.5rem] md:text-[4.2rem] leading-tight">
-          Take Your Productivity
+      <div className="text-center mb-10 px-2">
+        <h1 className="headingSpan1 text-[2rem] sm:text-[2.8rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-bold leading-tight break-words">
+               Take Your Productivity
         </h1>
-        <h1 className="headingSpan2 text-[3.2rem] sm:text-[3.5rem] md:text-[4.2rem] leading-tight">
-          To The Moon 🚀
+        <h1 className="headingSpan2 text-[2rem] sm:text-[2.8rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-bold leading-tight break-words">
+                 To The Moon 🚀
         </h1>
-      </div>
+        </div>
+
 
       {/* CTA Button */}
       <Link
