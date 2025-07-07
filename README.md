@@ -38,8 +38,8 @@
 
 **Syed Abdullah**
 Founder of **Dalzo**
-📧 [syedabdullah.dev@gmail.com](mailto:syedabdullah.dev@gmail.com)
-🔗 [LinkedIn](https://www.linkedin.com/in/syed-abdullah-dev)
+📧 [syedabdullah8750@gmail.com](mailto:syedabdullah8750@gmail.com)
+🔗 [LinkedIn](https://www.linkedin.com/in/syed-muhammad-abdullah-mahmood-0a88a8266/)
 
 ---
 
